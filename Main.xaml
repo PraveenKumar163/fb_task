@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="944,4403" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="944,4773" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -110,7 +110,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Data Scrapping fb task_Main Sequence" sap:VirtualizedContainerService.HintSize="753,4338" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Data Scrapping fb task_Main Sequence" sap:VirtualizedContainerService.HintSize="753,4708" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="DT_Extracted" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="countries" />
@@ -118,7 +118,6 @@
       <Variable x:TypeArguments="sd:DataTable" Name="DT_FiftyBillionaire" />
       <Variable x:TypeArguments="x:String" Name="outputfiftybilliondt" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_details" />
-      <Variable x:TypeArguments="x:String" Name="StringCities" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_Calculate" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -127,13 +126,13 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Opening Webstie in Browser" sap:VirtualizedContainerService.HintSize="691,4227" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://en.wikipedia.org/wiki/List_of_cities_by_number_of_billionaires">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Opening Webstie in Browser" sap:VirtualizedContainerService.HintSize="691,4597" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://en.wikipedia.org/wiki/List_of_cities_by_number_of_billionaires">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do: Scrap data" sap:VirtualizedContainerService.HintSize="657,4125" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do: Scrap data" sap:VirtualizedContainerService.HintSize="657,4495" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="country_filespath" />
             </Sequence.Variables>
@@ -248,7 +247,8 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <ui:BuildDataTable DataTable="[DT_FiftyBillionaire]" DisplayName="Build Data Table for 50+ Billionaries" sap:VirtualizedContainerService.HintSize="595,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Billionaires&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:LogMessage DisplayName="Billlionaries in Mumbai: Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;no of billionaires in Mumbai :&quot;+ DT_details.Rows(6).Item(&quot;Billionaires&quot;).ToString]" />
+            <ui:BuildDataTable DataTable="[DT_FiftyBillionaire]" DisplayName="Build Data Table for 50+ Billionaries" sap:VirtualizedContainerService.HintSize="595,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Billionaires&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
             <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_details]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="595,885" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
@@ -317,8 +317,24 @@
             </ui:ForEachRow>
             <ui:OutputDataTable DataTable="[DT_FiftyBillionaire]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="595,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[outputfiftybilliondt]" />
             <ui:LogMessage DisplayName="No of Cities with 50+ Billionaires: Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Number of cities with 50+ Billionaires : &quot;+DT_FiftyBillionaire.DefaultView.ToTable(false, &quot;City&quot;).Rows.Count.ToString]" />
-            <ui:OutputDataTable DataTable="[DT_FiftyBillionaire.DefaultView.ToTable(false, &quot;City&quot;)]" DisplayName="Cities with 50+ Billionaires: Output Data Table" sap:VirtualizedContainerService.HintSize="595,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[StringCities]" />
-            <ui:LogMessage DisplayName="Cities with 50+ Billionaires: Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;City names with 50+ billionaries&quot;+ Environment.NewLine+ StringCities]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Cities with 50+ Billionaires :&quot;]" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_FiftyBillionaire.DefaultView.ToTable(false, &quot;City&quot;)]" DisplayName="Cities with 50+ Billionaires: For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="595,318" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="City: Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[row(&quot;City&quot;).ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
