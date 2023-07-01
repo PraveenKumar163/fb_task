@@ -227,7 +227,7 @@
                 <OutArgument x:TypeArguments="s:String[]">[country_filespath]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="s:String[]">[System.IO.Directory.GetFiles("C:\Users\912pr\Documents\UiPath\task_fb\country output files")]</InArgument>
+                <InArgument x:TypeArguments="s:String[]">[System.IO.Directory.GetFiles("country output files")]</InArgument>
               </Assign.Value>
             </Assign>
             <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Looping through Country CSV files: For Each" sap:VirtualizedContainerService.HintSize="595,560" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[country_filespath]">
@@ -318,7 +318,7 @@
             <ui:OutputDataTable DataTable="[DT_FiftyBillionaire]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="595,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[outputfiftybilliondt]" />
             <ui:LogMessage DisplayName="No of Cities with 50+ Billionaires: Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Number of cities with 50+ Billionaires : &quot;+DT_FiftyBillionaire.DefaultView.ToTable(false, &quot;City&quot;).Rows.Count.ToString]" />
             <ui:OutputDataTable DataTable="[DT_FiftyBillionaire.DefaultView.ToTable(false, &quot;City&quot;)]" DisplayName="Cities with 50+ Billionaires: Output Data Table" sap:VirtualizedContainerService.HintSize="595,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[StringCities]" />
-            <ui:LogMessage DisplayName="Cities with 50+ Billionaires: Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Cities with 50+ billionaries&quot;+ Environment.NewLine+ StringCities]" />
+            <ui:LogMessage DisplayName="Cities with 50+ Billionaires: Log Message" sap:VirtualizedContainerService.HintSize="595,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;City names with 50+ billionaries&quot;+ Environment.NewLine+ StringCities]" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
